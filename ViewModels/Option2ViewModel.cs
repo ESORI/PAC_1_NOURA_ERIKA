@@ -13,7 +13,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
         // Col·lecció de Courses (podrien carregar-se d'una base de dades)
         // ObservableCollection és una llista que notifica els canvis a la vista
         public ObservableCollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
-        
+
+
 
         // Propietat per controlar el curs seleccionat a la vista
         private Client? _selectedClient;
@@ -26,7 +27,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
         // RelayCommands connectats via Binding als botons de la vista
         public RelayCommand AddClientCommand { get; set; }
         public RelayCommand DelClientCommand { get; set; }
-        
+
+
 
         public Option2ViewModel(MainViewModel mainViewModel)
         {
@@ -42,7 +44,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
             // Inicialitzem els diferents commands disponibles (accions)
             AddClientCommand = new RelayCommand(x => AddClient());
             DelClientCommand = new RelayCommand(x => DelClient());
-            
+
+
 
         }
 
@@ -57,7 +60,13 @@ namespace WPF_MVVM_SPA_Template.ViewModels
             if (SelectedClient != null)
                 Clients.Remove(SelectedClient);
         }
-        
+
+        public string GetNomById(int id)
+        {
+            var client = Clients.FirstOrDefault(c => c.Id == id);
+            return client != null ? client.Nom : string.Empty;
+        }
+
 
         // Això és essencial per fer funcionar el Binding de propietats entre Vistes i ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
