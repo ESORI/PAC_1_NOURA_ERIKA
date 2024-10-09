@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using WPF_MVVM_SPA_Template.Views;
 
 namespace WPF_MVVM_SPA_Template.ViewModels
@@ -36,6 +37,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
                 ChangeView();
             }
         }
+        
+       
 
         public MainViewModel()
         {
@@ -45,6 +48,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
             // Mostra la vista principal inicialment
             SelectedView = "Option1";
             ChangeView();
+            
+
         }
 
         // Canvi de Vista
@@ -56,6 +61,8 @@ namespace WPF_MVVM_SPA_Template.ViewModels
                 case "Option2": CurrentView = new Option2View { DataContext = Option2VM }; break;
             }
         }
+
+        
 
         // Això és essencial per fer funcionar el Binding de propietats entre Vistes i ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;

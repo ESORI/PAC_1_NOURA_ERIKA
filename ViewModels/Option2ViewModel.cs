@@ -139,6 +139,7 @@ namespace WPF_MVVM_SPA_Template.ViewModels
 
 
 
+
         // Això és essencial per fer funcionar el Binding de propietats entre Vistes i ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string? name = null)
