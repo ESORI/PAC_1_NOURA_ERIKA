@@ -273,7 +273,7 @@ namespace WPF_MVVM_SPA_Template.ViewModels
             if (result == MessageBoxResult.Yes)
             {
                 ClearForm();
-                _mainViewModel.SelectedView = "Option3";
+                _mainViewModel.SelectedView = "Option2";
             }
             // If 'No' is clicked, do nothing and remain in the current view.
         }

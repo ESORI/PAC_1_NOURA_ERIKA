@@ -13,9 +13,6 @@
             <Button Tag="ChangeTheme" Command="{Binding ChangeThemeCommand}" HorizontalContentAlignment="Center" Grid.Column="0" Width="Auto" DockPanel.Dock="Bottom"  Background="Transparent" >
                 <Image Source="Images/ChangeTheme.png" Width="Auto" Height="20"/>
             </Button>
-            <Button Tag="GetInfo" FontSize="16" HorizontalContentAlignment="Center" Width="Auto" Grid.Column="1"  DockPanel.Dock="Bottom" Background="Transparent" >
-                <Image Source="Images/Info_Black.png" Width="Auto" Height="20" Grid.Column="0"/>
-            </Button>
 
 
             <!-- Barra de navegació lateral estil SPA amb ListBox -->
@@ -27,6 +24,8 @@
                              HorizontalContentAlignment="Left" Style="{DynamicResource ModernSidebarStyle}"/>
                 <ListBoxItem Content="Bank Inf." Tag="Option3" FontSize="16" Padding="10" 
                              HorizontalContentAlignment="Left" Style="{DynamicResource ModernSidebarStyle}"/>
+                <ListBoxItem Content="Sobre" Tag="Option4" FontSize="16" Padding="10" 
+                        HorizontalContentAlignment="Left" Style="{DynamicResource ModernSidebarStyle}"/>
                 <ListBoxItem IsEnabled="False" FontSize="16" Padding="10" Height="200"
                              HorizontalContentAlignment="Left" Style="{DynamicResource ModernSidebarStyle}"/>
             

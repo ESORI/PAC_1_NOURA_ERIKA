@@ -19,18 +19,19 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="Auto" />
                 <DataGridTextColumn Header="Client" Binding="{Binding ClientName}" Width="Auto" />
-                <DataGridTextColumn Header="IBAN" Binding="{Binding IBAN}" Width="*" />
-                <DataGridTextColumn Header="Income" Binding="{Binding SavedIncome}" Width="*"/>
-                <DataGridTextColumn Header="Debt" Binding="{Binding Debt}" Width="200"/>
-                <DataGridTextColumn Header="Pin" Binding="{Binding Pin}" Width="100"/>
-                <DataGridTemplateColumn Width="Auto">
+                <DataGridTextColumn Header="IBAN" Binding="{Binding IBAN}" Width="Auto" />
+                <DataGridTextColumn Header="Income" Binding="{Binding SavedIncome}" Width="Auto"/>
+                <DataGridTextColumn Header="Debt" Binding="{Binding Debt}" Width="Auto"/>
+                <DataGridTextColumn Header="Pin" Binding="{Binding Pin}" Width="Auto"/>
+                
+                <DataGridTemplateColumn Header="Edit" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Edit" Command="{Binding DataContext.EditBCInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{DynamicResource ModernEditButtonStyle}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="*">
+                <DataGridTemplateColumn Header="Delete" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Delete" Command="{Binding DataContext.RemoveBCInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{DynamicResource ModernDeleteButtonStyle}"/>
@@ -43,8 +44,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Add" Command="{Binding AddBCInfoCommand}" Margin="5" Padding="10,5" 
             Style="{DynamicResource ModernSecundaryButtonStyle}"/>
-            <Button Content="Check Performance" Margin="5" Padding="10,5" 
-            Style="{DynamicResource ModernPrimaryButtonStyle}"/>
+           
 
             <Button Content="Export to JSON" Command="{Binding ExportToJsonCommand}" Margin="5" Padding="10,5" Style="{DynamicResource ModernSideButtonStyle}"/>
 
